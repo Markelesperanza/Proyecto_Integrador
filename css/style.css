@@ -1,8 +1,54 @@
 * {
     box-sizing: border-box;
 }
-
+body {
+    margin: 0px;
+}
+ul, ol {
+    padding: 0px;
+}
+li {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
 /***** HEADER *****/
 header {
     width: 100%;
+    background-color: white;
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0px 20px 0px;
+}
+nav li {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    margin: 10px;
+}
+a {
+    color: purple;
+}
+nav {
+    background-image: url(../img/logo-musify.png);
+    background-position: left;
+    background-repeat: no-repeat;
+}
+.lagomusify {
+
+}
+body {
+    background-color: black;
+}
+.logomusify img {
+    height: 100%;
 }
