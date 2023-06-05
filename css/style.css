@@ -16,7 +16,7 @@ a {
 /***** HEADER *****/
 header {
     background-color: #1A1A1A;
-    margin: 15px;
+    margin: 15px 15px 0px 15px;
     border-radius: 15px;
 }
 header nav {
@@ -41,7 +41,7 @@ header nav a {
 }
 #logomusify {
     height: 100%;
-    margin: 0px 20px 0px;
+    margin: 0px 15px 0px;
 }
 /***** HEADER *****/
 
@@ -71,6 +71,27 @@ footer {
     align-items: center;
 }
 /***** FOOTER *****/
+
+/***** HOME *****/
 body {
     background-color: black;
 }
+#home-del-sitio {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+article.home-listado {
+    background-color: #1A1A1A;
+    border-radius: 15px ;
+    width: 100%;
+    margin: 15px;
+}
+h2.home-titulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #CB6CE6;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+/***** HOME *****/
