@@ -76,20 +76,23 @@ footer {
 body {
     background-color: white;
 }
-.home-section {
+section.home-section {
     display: flex;
     flex-direction: column;
+    margin: 15px;
 }
-section.listado-artistas {
+section.home-listado{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #1A1A1A;
+    border-radius: 15px;
+    padding: 5px;
 }
-section.listado-albumes {
-    display: flex;
-    flex-direction: row;
-}
-section.listado-canciones {
-    display: flex;
-    flex-direction: row;
+article.home-article-artistas {
+    background-color: grey;
+    border-radius: 15px;
+    padding: 13px;
 }
 /***** HOME *****/

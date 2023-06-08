@@ -13,7 +13,7 @@ fetch(urlArtistas)
 
     for(let i = 0; i<1; i++){
         albumHTML += `<article class= "detalles-track">
-        <img src= ${arrayAlbum[i].artist.picture_big}>
+        <img src= ${arrayAlbum[i].album.cover_big}>
         <h2> ${arrayAlbum[i].title}</h2>
         <h3> ${arrayAlbum[i].artist.name}</h3>`
     }

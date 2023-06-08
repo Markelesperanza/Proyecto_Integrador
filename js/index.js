@@ -8,13 +8,13 @@ fetch(urlCanciones)
 .then(function(data){
     console.log(data);
 
-    let canciones= document.querySelector(".listado-canciones");
+    let canciones= document.querySelector(".home-listado-canciones");
     let arrayCanciones= data.data
     let cancionesHTML= ''
 
     for(let i=0; i<arrayCanciones.length; i++){
-        cancionesHTML += `<article class="article-canciones">
-        <a href:"first-artist.html?id=${arrayCanciones[i].id}">
+        cancionesHTML += `<article class="home-article-canciones">
+        <a href="first-artist.html?id=${arrayCanciones[i].id}">
         <img src= ${arrayCanciones[i].album.cover_medium}>
         <h2>${arrayCanciones[i].title}</h2>
         <h3>${arrayCanciones[i].artist.name}</h3>
@@ -37,16 +37,16 @@ fetch(urlAlbum)
 .then(function(data){
     console.log(data);
 
-    let album= document.querySelector(".listado-albumes");
+    let album= document.querySelector(".home-listado-albumes");
     let arrayAlbum= data.data
     let albumHTML= ''
 
     for(let i=0; i<arrayAlbum.length; i++){
-        albumHTML += `<article class="article-album">
+        albumHTML += `<article class="home-article-album">
         <img src= ${arrayAlbum[i].cover_medium}>
-        <h2>${arrayAlbum[i].title} </h2>
         </a>
         </article>`
+    //<h2>${arrayAlbum[i].title} </h2>
 
     }
     album.innerHTML= albumHTML;
@@ -65,12 +65,12 @@ fetch(urlArtistas)
 .then(function(data){
     console.log(data);
 
-    let artistas= document.querySelector(".listado-artistas");
+    let artistas= document.querySelector(".home-listado-artistas");
     let arrayArtistas= data.data
     let artistasHTML= ''
 
     for(let i=0; i<arrayArtistas.length; i++){
-        artistasHTML += `<article class="article-artistas">
+        artistasHTML += `<article class="home-article-artistas">
         <a href="first-artist.html?id=${arrayArtistas[i].id}">
         <img src= ${arrayArtistas[i].picture_medium}>
         <h2>${arrayArtistas[i].name} </h2>
