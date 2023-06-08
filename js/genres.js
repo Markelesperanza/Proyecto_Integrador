@@ -13,11 +13,11 @@ fetch(urlDetallesGenero)
 
     for(let i=0; i<arrayDetallesGeneros.length; i++){
         detallesGenerosHTML += `<article class="">
-        <h2>${arrayDetallesGeneros[i].}</h2>
+        <h2>${arrayDetallesGeneros[i].name}</h2>
         <ul>
             <li>
-             <img src=${arrayDetallesGeneros[i].}>
-             <h3>${arrayDetallesGeneros[i].}</h3>
+             <img src=${arrayDetallesGeneros[i].name}>
+             <h3>${arrayDetallesGeneros[i].name}</h3>
             </li>
         </ul>
         </article>`
