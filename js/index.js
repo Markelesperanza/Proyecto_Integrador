@@ -16,8 +16,8 @@ fetch(urlCanciones)
         cancionesHTML += `<article class="home-article-canciones">
         <a href="first-artist.html?id=${arrayCanciones[i].id}">
         <img src= ${arrayCanciones[i].album.cover_medium}>
-        <h2>${arrayCanciones[i].title}</h2>
-        <h3>${arrayCanciones[i].artist.name}</h3>
+        <h2>${arrayCanciones[i].name}</h2>
+        <h3>${arrayCanciones[i].artist.title}</h3>
         </a>
         </article>`
     }
