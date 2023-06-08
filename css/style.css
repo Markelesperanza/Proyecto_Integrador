@@ -74,24 +74,22 @@ footer {
 
 /***** HOME *****/
 body {
-    background-color: black;
+    background-color: white;
 }
-#home-del-sitio {
+.home-section {
+    display: flex;
+    flex-direction: column;
+}
+section.listado-artistas {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
-article.home-listado {
-    background-color: #1A1A1A;
-    border-radius: 15px ;
-    width: 100%;
-    margin: 15px;
-}
-h2.home-titulo {
+section.listado-albumes {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    color: #CB6CE6;
-    font-family: 'Hind Siliguri', sans-serif;
+}
+section.listado-canciones {
+    display: flex;
+    flex-direction: row;
 }
 /***** HOME *****/
