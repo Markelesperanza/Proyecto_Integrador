@@ -14,13 +14,12 @@ fetch(urlCanciones)
 
     for(let i=0; i<arrayCanciones.length; i++){
         cancionesHTML += `<article class="article-canciones">
-        <a class="" href="https://api.deezer.com/chart/0/tracks${arrayCanciones[i].id}">
+        <a href:"first-artist.html?id=${arrayCanciones[i].id}">
         <img src= ${arrayCanciones[i].album.cover_medium}>
         <h2>${arrayCanciones[i].title}</h2>
         <h3>${arrayCanciones[i].artist.name}</h3>
         </a>
         </article>`
-
     }
     canciones.innerHTML= cancionesHTML;
 
@@ -46,6 +45,7 @@ fetch(urlAlbum)
         albumHTML += `<article class="article-album">
         <img src= ${arrayAlbum[i].cover_medium}>
         <h2>${arrayAlbum[i].title} </h2>
+        </a>
         </article>`
 
     }
@@ -71,12 +71,11 @@ fetch(urlArtistas)
 
     for(let i=0; i<arrayArtistas.length; i++){
         artistasHTML += `<article class="article-artistas">
-        <a class="" href="https://api.deezer.com/chart/0/tracks${arrayCanciones[i].id}">
+        <a href="first-artist.html?id=${arrayArtistas[i].id}">
         <img src= ${arrayArtistas[i].picture_medium}>
         <h2>${arrayArtistas[i].name} </h2>
         </a>
         </article>`
-
     }
     artistas.innerHTML= artistasHTML;
 
