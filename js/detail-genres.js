@@ -1,5 +1,9 @@
 
-let urlDetallesGenero= "https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/13/top?limit=50"
+let queryString = window.location.search
+let queryStringObj = new URLSearchParams(queryString);
+let id = queryStringObj.get("id");
+
+let urlDetallesGenero= `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}/artists`
 
 
 fetch(urlDetallesGenero)
@@ -15,10 +19,9 @@ fetch(urlDetallesGenero)
 
     for(let i=0; i<arrayDetallesGenero.length; i++){
         detallesGeneroHTML += `<article>
-        <img src= ${arrayCanciones[i].album.cover_medium}>
-        <h1>${arrayDetallesGenero[i].d}</h1>
-        <h3>${arrayCanciones[i].artist.title}</h3>
-        </a>
+        <h2></h2>
+        <img src=${arrayDetallesGenero[i].picture_medium}>
+        <h3>${arrayDetallesGenero[i].name}</h3>
         </article>`
     }
     detallesGenero.innerHTML= detallesGeneroHTML;
@@ -27,9 +30,3 @@ fetch(urlDetallesGenero)
 .catch(function(error){
     console.log("Error: " + error);
 })
-
-let queryString = window.location.search
-let queryStringObj = new URLSearchParams(queryString);
-let id = queryStringObj.get("id");
-
-let urlArtista = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${id}`
