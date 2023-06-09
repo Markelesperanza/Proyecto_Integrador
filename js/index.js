@@ -71,7 +71,7 @@ fetch(urlArtistas)
 
     for(let i=0; i<arrayArtistas.length; i++){
         artistasHTML += `<article class="home-article-artistas">
-        <a href="first-artist.html?id=${arrayArtistas[i].id}">
+        <a href="detalles-artistas.html?id=${arrayArtistas[i].id}">
         <img src= ${arrayArtistas[i].picture_medium}>
         <h2>${arrayArtistas[i].name} </h2>
         </a>
