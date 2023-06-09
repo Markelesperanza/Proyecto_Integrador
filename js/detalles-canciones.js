@@ -1,22 +1,23 @@
-let urlCancion = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks"
+let queryString = window.location.search
+let queryStringObj = new URLSearchParams(queryString);
+let id = queryStringObj.get("id");
+
+let urlCancion = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${id}`
 
 fetch(urlCancion)
 .then(function(response){
     return response.json()
 })
 .then(function(data){
-    console.log();
+    console.log(data);
 
     let cancion = document.querySelector (".detalles-canción")
-    let arrayCancion = data.data
     let cancionHTML = ""
 
-    for(let i = 0; i<1; i++){
         cancionHTML += `<article class= "detalles-track">
-        <img src= ${arrayCancion[i].artist.picture_big}>
-        <h2> ${arrayCancion[i].title}</h2>
-        <h3> ${arrayCancion[i].artist.name}</h3>`
-    }
+        <img src= ${data.name}>
+        <h2> ${data.name}</h2>
+        <h3> ${data.name}</h3>`
     cancion.innerHTML = cancionHTML;
 })
 .catch(function(error){
