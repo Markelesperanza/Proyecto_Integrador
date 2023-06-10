@@ -74,26 +74,39 @@ footer {
 
 /***** HOME *****/
 body {
-    background-color: white;
+    background-color: black;
 }
 section.home-section {
     display: flex;
     flex-direction: column;
-    margin: 15px;
+    margin: 10px 15px;
+}
+section.home-titulo-listados{
+    background-color: #1A1A1A;
+    border-radius: 15px;
+    padding: 0px 15px;
+    margin: 5px 0px;
+    color: white;
 }
 section.home-listado{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
     background-color: #1A1A1A;
     border-radius: 15px;
-    padding: 5px;
+    padding: 15px;
 }
-article.home-article-artistas {
-    background-color: grey;
-    border-radius: 15px;
-    padding: 13px;
+article.home-article{
+    margin: 10px;
+    background-color: #CB6CE6;
+    border-radius:  0px 0px 15px 15px;
+}
+.dale{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+}
+h2{
+    font-family: 'Ubuntu', sans-serif;
 }
 /***** HOME *****/
 
@@ -113,5 +126,3 @@ section.listado-generos{
     padding: 5px;
 }
 /***GENEROS***/
-
-
