@@ -1,4 +1,5 @@
 /***** HOME *****/
+/***** CANCIONES *****/
 let urlCanciones= "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/tracks"
 
 fetch(urlCanciones)
@@ -16,8 +17,8 @@ fetch(urlCanciones)
         cancionesHTML += `<article class="home-article-canciones">
         <a href="detalles-canciones.html?id=${arrayCanciones[i].id}">
         <img src= ${arrayCanciones[i].album.cover_medium}>
-        <h2>${arrayCanciones[i].name}</h2>
-        <h3>${arrayCanciones[i].artist.title}</h3>
+        <h2>${arrayCanciones[i].title}</h2>
+        <h3>${arrayCanciones[i].artist.name}</h3>
         </a>
         </article>`
     }
@@ -27,7 +28,9 @@ fetch(urlCanciones)
 .catch(function(error){
     console.log("Error: " + error);
 })
+/***** CANCIONES *****/
 
+/***** ALBUM *****/
 let urlAlbum= "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums"
 
 fetch(urlAlbum)
@@ -43,10 +46,12 @@ fetch(urlAlbum)
 
     for(let i=0; i<arrayAlbum.length; i++){
         albumHTML += `<article class="home-article-album">
+        <a href="detalles-album.html?id=${arrayAlbum[i].id}">
         <img src= ${arrayAlbum[i].cover_medium}>
+        <h2>${arrayAlbum[i].title} </h2>
+        <h3>${arrayAlbum[i].artist.name}</h3>
         </a>
         </article>`
-    //<h2>${arrayAlbum[i].title} </h2>
 
     }
     album.innerHTML= albumHTML;
@@ -54,8 +59,9 @@ fetch(urlAlbum)
 .catch(function(error){
     console.log("Error: " + error);
 })
+/***** ALBUM *****/
 
-
+/***** ARTISTAS *****/
 let urlArtistas= "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/artists"
 
 fetch(urlArtistas)
@@ -83,4 +89,6 @@ fetch(urlArtistas)
 .catch(function(error){
     console.log("Error: " + error);
 })
+/***** ARTISTAS *****/
+
 /***** HOME *****/

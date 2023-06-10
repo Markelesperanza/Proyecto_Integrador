@@ -22,6 +22,7 @@ fetch(urlArtista)
 
     artista.innerHTML = artistaHTML;
 })
+//Lista de máximo 5 albums.
 .catch(function(error){
     console.log("Error: " + error);
 })

@@ -15,11 +15,14 @@ fetch(urlCancion)
     let cancionHTML = ""
 
         cancionHTML += `<article class= "detalles-track">
-        <img src= ${data.name}>
-        <h2> ${data.name}</h2>
-        <h3> ${data.name}</h3>`
+        <img src= ${data.album.cover_big}>
+        <h2> ${data.title}</h2>
+        <h3> ${data.artist.name}</h3>`
     cancion.innerHTML = cancionHTML;
 })
+//La posibilidad de agregar la canción a “mi playlist”.
+//El link para ver la playlist personal.
+
 .catch(function(error){
     console.log("Error: " + error);
 })

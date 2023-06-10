@@ -11,7 +11,7 @@ fetch (urlGeneros)
     let arrayGeneros= data.data
     let generosHTML= ""
     
-    for(let i=0;i<arrayGeneros.length;i++){
+    for(let i=1;i<arrayGeneros.length;i++){
         generosHTML += `<article class= "article-generos">
         <a href="detail-genres.html?id=${arrayGeneros[i].id}">
         <h2>${arrayGeneros[i].name}</h2>

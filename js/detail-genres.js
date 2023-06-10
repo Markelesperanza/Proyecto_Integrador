@@ -1,4 +1,3 @@
-
 let queryString = window.location.search
 let queryStringObj = new URLSearchParams(queryString);
 let id = queryStringObj.get("id");

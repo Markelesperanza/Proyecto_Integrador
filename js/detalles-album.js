@@ -1,26 +1,29 @@
-let urlAlbum = "https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums"
+let queryString = window.location.search
+let queryStringObj = new URLSearchParams(queryString);
+let id = queryStringObj.get("id");
+
+let urlAlbum = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${id}`
 
 fetch(urlAlbum)
 .then(function(response){
     return response.json()
 })
 .then(function(data){
-    console.log();
+    console.log(data);
 
     let album = document.querySelector (".detalles-album")
-    let arrayAlbum = data.data
     let albumHTML = ""
 
-    for(let i=0; i<1; i++){
         albumHTML += `<article class= "detalles-disco">
-        <img src= ${arrayAlbum[i].cover_big}>
-        <h2> ${arrayAlbum[i].title}</h2>
-        <h3> ${arrayAlbum[i].artist.name}</h3>`
-    }
+        <img src= ${data.cover_big}>
+        <h2> ${data.title}</h2>
+        <h3> ${data.artist.name}</h3>
+        <h3>${data.genres.data[0].name}</h3>
+        <h3>${data.release_date}</h3>`
 
     album.innerHTML = albumHTML;
 })
+//Lista de canciones/ temas del disco.
 .catch(function(error){
     console.log("Error: " + error);
 })
-    
