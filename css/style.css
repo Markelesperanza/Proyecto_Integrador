@@ -3,6 +3,7 @@
 }
 body {
     margin: 0px;
+    font-family: Arial, sans-serif;
 }
 ul, ol {
     padding: 0px;
@@ -16,32 +17,28 @@ a {
 /***** HEADER *****/
 header {
     background-color: #1A1A1A;
-    margin: 15px 15px 0px 15px;
+    margin: 15px;
     border-radius: 15px;
+    padding: 10px;
 }
 header nav {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
 }
 header nav ul {
     display: flex;
-    flex-direction: row;
-    margin: 0px 20px 0px;
+    margin: 0px 20px;
 }
 header nav li {
     font-family: 'Hind Siliguri', sans-serif;
-    font-size: 30px;
+    font-size: 24px;
     margin: 10px;
-}
-header nav a {
     color: #CB6CE6;
 }
 #logomusify {
-    height: 100%;
-    margin: 0px 15px 0px;
+    height: 50px;
+    margin: 0px 15px;
 }
 /***** HEADER *****/
 
@@ -50,47 +47,41 @@ footer {
     height: 90px;
     border-radius: 15px ;
     background-color: #1A1A1A;
-    margin: 0px 15px;
+    margin: 15px;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: flex-end;
 }
 #footerlist {
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
 .footeritems {
     margin: 0px 10px;
     font-family: 'Hind Siliguri', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     color: #CB6CE6;
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 /***** FOOTER *****/
 
 /***** HOME *****/
 body {
-    background-color: black;
+    background-color: #222222;
 }
 section.home-section {
-    display: flex;
-    flex-direction: column;
     margin: 10px 15px;
 }
 section.home-titulo-listados{
     background-color: #1A1A1A;
     border-radius: 15px;
-    padding: 0px 15px;
+    padding: 10px 15px;
     margin: 5px 0px;
     color: white;
 }
 section.home-listado{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     background-color: #1A1A1A;
     border-radius: 15px;
@@ -100,13 +91,20 @@ article.home-article{
     margin: 10px;
     background-color: #CB6CE6;
     border-radius:  0px 0px 15px 15px;
+    transition: transform 0.5s ease;
 }
-.dale{
+/***** HOME *****/
+
+article.home-article:hover {
+    transform: scale(1.05);
+  }
+.link-color{
     color: white;
     font-family: 'Ubuntu', sans-serif;
 }
-h2{
+.home-texto{
     font-family: 'Ubuntu', sans-serif;
+    padding: 10px;
 }
 /***** HOME *****/
 
@@ -123,6 +121,6 @@ section.listado-generos{
     justify-content: space-between;
     background-color: #1A1A1A;
     border-radius: 15px;
-    padding: 5px;
+    padding: 10px;
 }
 /***GENEROS***/

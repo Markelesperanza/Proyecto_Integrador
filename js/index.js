@@ -15,10 +15,10 @@ fetch(urlCanciones)
 
     for(let i=0; i<arrayCanciones.length; i++){
         cancionesHTML += `<article class="home-article-canciones home-article">
-        <a class="dale" href="detalles-canciones.html?id=${arrayCanciones[i].id}">
+        <a class="link-color" href="detalles-canciones.html?id=${arrayCanciones[i].id}">
         <img src= ${arrayCanciones[i].album.cover_medium}>
-        <h2>${arrayCanciones[i].title}</h2>
-        <h3>${arrayCanciones[i].artist.name}</h3>
+        <h2 class="home-texto" >${arrayCanciones[i].title}</h2>
+        <h3 class="home-texto" >${arrayCanciones[i].artist.name}</h3>
         </a>
         </article>`
     }
@@ -46,10 +46,10 @@ fetch(urlAlbum)
 
     for(let i=0; i<arrayAlbum.length; i++){
         albumHTML += `<article class="home-article-album home-article">
-        <a class="dale" href="detalles-album.html?id=${arrayAlbum[i].id}">
+        <a class="link-color" href="detalles-album.html?id=${arrayAlbum[i].id}">
         <img src= ${arrayAlbum[i].cover_medium}>
-        <h2>${arrayAlbum[i].title} </h2>
-        <h3>${arrayAlbum[i].artist.name}</h3>
+        <h2 class="home-texto" >${arrayAlbum[i].title} </h2>
+        <h3 class="home-texto" >${arrayAlbum[i].artist.name}</h3>
         </a>
         </article>`
 
@@ -77,9 +77,9 @@ fetch(urlArtistas)
 
     for(let i=0; i<arrayArtistas.length; i++){
         artistasHTML += `<article class="home-article-artistas home-article">
-        <a class="dale" href="detalles-artistas.html?id=${arrayArtistas[i].id}">
+        <a class="link-color" href="detalles-artistas.html?id=${arrayArtistas[i].id}">
         <img src= ${arrayArtistas[i].picture_medium}>
-        <h2>${arrayArtistas[i].name} </h2>
+        <h2 class="home-texto" >${arrayArtistas[i].name} </h2>
         </a>
         </article>`
     }
