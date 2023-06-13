@@ -1,3 +1,5 @@
+
+
 let queryString = window.location.search
 let queryStringObj = new URLSearchParams(queryString);
 let id = queryStringObj.get("id");
@@ -24,6 +26,33 @@ fetch(urlDetallesGenero)
         </article>`
     }
     detallesGenero.innerHTML= detallesGeneroHTML;
+
+})
+.catch(function(error){
+    console.log("Error: " + error);
+})
+
+let qsGenero = window.location.search
+let qsGeneroObj = new URLSearchParams(qsGenero);
+let idGenero = qsGeneroObj.get("id");
+
+let urlGenero= `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}`
+
+fetch(urlGenero)
+.then(function(response){
+    return response.json()
+})
+.then(function(data){
+    console.log(data);
+
+    let dGenero= document.querySelector(".genero-titulo");
+    let dGeneroHTML= ''
+
+        dGeneroHTML += `<article>
+        <h2>${data.name}</h2>
+        </article>`
+    
+    dGenero.innerHTML= dGeneroHTML;
 
 })
 .catch(function(error){
