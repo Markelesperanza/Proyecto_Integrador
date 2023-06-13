@@ -109,6 +109,12 @@ article.home-article:hover {
 /***** HOME *****/
 
 /***GENEROS***/
+h2.generos-h2{
+    color: white;
+}
+a.generos-titulo{
+    color: white;
+}
 section.genres-section {
     display: flex;
     flex-direction: column;
@@ -118,9 +124,10 @@ section.listado-generos{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #1A1A1A;
     border-radius: 15px;
     padding: 10px;
+    align-items: center;
 }
 /***GENEROS***/

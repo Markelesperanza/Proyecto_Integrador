@@ -1,7 +1,3 @@
-
-
-
-
 //Probando
 let form = document.querySelector("form");
 let inputDeBusqueda = document.querySelector("input");
@@ -39,5 +35,3 @@ function buscarResultados() {
     { title: 'Artistas', url:  }
   ];
 }
-
-
