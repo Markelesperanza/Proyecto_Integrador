@@ -11,13 +11,16 @@ fetch(urlCancion)
 .then(function(data){
     console.log(data);
 
-    let cancion = document.querySelector (".detalles-canción")
+    let cancion = document.querySelector (".detalles-cancion")
     let cancionHTML = ""
 
-        cancionHTML += `<article class= "detalles-track">
+        cancionHTML += `<article class= "detalles-track detalles-article-informacion">
         <img src= ${data.album.cover_big}>
-        <h2> ${data.title}</h2>
-        <h3> ${data.artist.name}</h3>`
+        <ul class="detalles-generos" >
+        <li><h2> Cancion: ${data.title}</h2></li>
+        <li><h3> Artista: ${data.artist.name}</h3></li>
+        <li><h3> Album: ${data.album.title}</h3></li>
+        </ul>`
     cancion.innerHTML = cancionHTML;
 })
 //La posibilidad de agregar la canción a “mi playlist”.
@@ -26,3 +29,6 @@ fetch(urlCancion)
 .catch(function(error){
     console.log("Error: " + error);
 })
+
+//<button class="" >Agregar a Mi Playlist</button>
+//<a href="file:///Users/markel/Desktop/Proyecto_Integrador/playlist.html">Ver Playlist Personal</a>

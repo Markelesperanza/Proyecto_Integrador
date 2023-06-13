@@ -35,7 +35,11 @@ header nav li {
     font-size: 24px;
     margin: 10px;
     color: #CB6CE6;
+    transition: transform 0.5s ease; 
 }
+header nav li:hover {
+    transform: scale(1.05);
+  }
 #logomusify {
     height: 50px;
     margin: 0px 15px;
@@ -124,3 +128,19 @@ section.listado-generos{
     padding: 10px;
 }
 /***GENEROS***/
+
+/***DETALLES***/
+section.detalles-informacion{
+    background-color: #1A1A1A;
+    border-radius: 15px;
+    margin: 10px 15px;
+}
+article.detalles-article-informacion{
+    display: flex;
+    padding: 15px;
+    color: white;
+}
+.detalles-generos{
+    margin:  0px 100px;
+}
+/***DETALLES***/
