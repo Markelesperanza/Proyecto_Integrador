@@ -14,16 +14,38 @@ fetch(urlAlbum)
     let album = document.querySelector (".detalles-album")
     let albumHTML = ""
 
-        albumHTML += `<article class= "detalles-disco">
+        albumHTML += `<article class= "detalles-disco detalles-article-informacion">
         <img src= ${data.cover_big}>
-        <h2> ${data.title}</h2>
-        <h3> ${data.artist.name}</h3>
-        <h3>${data.genres.data[0].name}</h3>
-        <h3>${data.release_date}</h3>`
+        <ul class="detalles-generos" >
+        <li><h2> Album: ${data.title}</h2></li>
+        <li><h3> Artista: ${data.artist.name}</h3></li>
+        <li><h3> Genero: ${data.genres.data[0].name}</h3></li>
+        <li><h3> Fecha de publicación:${data.release_date}</h3></li>
+        </ul>`
 
     album.innerHTML = albumHTML;
+
+    let albumTracks = document.querySelector(".detalles-album");
+    let idTracks = data.artist.id
+    let urlTracklist = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${idTracks}/image`
+
+    fetch(urlTracklist)
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(data){
+        console.log(data);
+        
+    let arrayTracklist = data.data;
+    let trackListHTML = ""
+
+        album.innerHTML = trackListHTML
+    })
+    .catch(function(error){
+        console.log("Error: " + error);
+    })
+
 })
-//Lista de canciones/ temas del disco.
 .catch(function(error){
     console.log("Error: " + error);
 })

@@ -15,10 +15,11 @@ fetch(urlArtista)
     let artista = document.querySelector (".detalles-artista")
     let artistaHTML = ""
 
-        artistaHTML += `<article class= "detalles-cantante">
+        artistaHTML += `<article class= "detalles-cantante detalles-article-informacion">
         <img src= ${data.picture_big}>
-        <h2> ${data.name}</h2>
-        `
+        <ul class="detalles-generos" >
+        <li><h2> Artista: ${data.name}</h2></li>
+        </ul>`
 
     artista.innerHTML = artistaHTML;
 })
