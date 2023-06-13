@@ -22,13 +22,51 @@ fetch(urlCancion)
         <li><h3> Album: ${data.album.title}</h3></li>
         </ul>`
     cancion.innerHTML = cancionHTML;
-})
-//La posibilidad de agregar la canción a “mi playlist”.
-//El link para ver la playlist personal.
 
+    let linkFavoritos = document.querySelector (".etiqueta-playlist");
+    
+    let recuperoStorage = localStorage.getItem(".link-playlist-section");
+    let storageToArray = JSON.parse(recuperoStorage);
+
+    let cancionesFavoritos = [];
+    if(recuperoStorage !== null){
+        cancionesFavoritos = storageToArray
+    }
+    
+    linkFavoritos.addEventListener('click', function(e){
+        e.preventDefault();
+        
+        if (cancionesFavoritos.includes(id)) {
+            
+            let arrayIncluye = cancionesFavoritos.indexOf(id);
+            if (arrayIncluye !== -1) {
+              cancionesFavoritos.splice(arrayIncluye, 1);
+            }
+            cancionesAJson = JSON.stringify(cancionesFavoritos);
+            localStorage.setItem("MiPlaylist", cancionesAJson);
+
+
+            console.log("Eliminada");
+          } else {
+            
+            cancionesFavoritos.push(id);
+            cancionesAJson = JSON.stringify(cancionesFavoritos);
+            localStorage.setItem("MiPlaylist", cancionesAJson);
+
+
+            console.log("Agregada");
+          }
+        
+        console.log(localStorage);
+    })
+})
 .catch(function(error){
     console.log("Error: " + error);
 })
 
-//<button class="" >Agregar a Mi Playlist</button>
-//<a href="file:///Users/markel/Desktop/Proyecto_Integrador/playlist.html">Ver Playlist Personal</a>
+//.includes() retorna si el elemento de encunetra en el array y retorna True o False
+//.indexOf() retorna en que indice del array se encuentra
+// retorna -1 si no encuentra el elemento
+//.splice() eimina el elemento existente en el array
+//cancionesFavoritos.push(id);
+//localStorage.setItem(".detalles-cancion", cancionesAJson)
