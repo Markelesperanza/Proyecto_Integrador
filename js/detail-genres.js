@@ -4,7 +4,7 @@ let queryString = window.location.search
 let queryStringObj = new URLSearchParams(queryString);
 let id = queryStringObj.get("id");
 
-let urlDetallesGenero = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}/artistas`
+let urlDetallesGenero = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}/artists`
 
 fetch(urlDetallesGenero)
 .then(function(response){
@@ -35,7 +35,7 @@ let qsGenero = window.location.search
 let qsGeneroObj = new URLSearchParams(qsGenero);
 let idGenero = qsGeneroObj.get("id");
 
-let urlGenero= `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}`
+let urlGenero= `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${idGenero}`
 
 fetch(urlGenero)
 .then(function(response){

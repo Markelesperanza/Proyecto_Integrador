@@ -14,14 +14,16 @@ fetch(urlCancion)
     let cancion = document.querySelector (".detalles-cancion")
     let cancionHTML = ""
 
-        cancionHTML += `<article class= "detalles-track detalles-article-informacion">
-        <img src= ${data.album.cover_big}>
-        <ul class="detalles-generos" >
+        cancionHTML += `<article class= "detalles-canciones-informacion">
+        <img class="detalles-canciones-iamgen" src= ${data.album.cover_big}>
+        <ul class="detalles-canciones-texto" >
         <li><h2> Cancion: ${data.title}</h2></li>
-        <li><h3>Artista: <a href="detalles-artistas.html?id=${data.artist.id}">${data.artist.name}</a></h3></li>
-        <li><h3> Album: <a href="detalles-album.html?id=${data.album.id}">${data.album.title}</a></h3></li>
+        <li><h3>Artista: <a class="detalles-canciones-link" href="detalles-artistas.html?id=${data.artist.id}">${data.artist.name}</a></h3></li>
+        <li><h3> Album: <a class="detalles-canciones-link" href="detalles-album.html?id=${data.album.id}">${data.album.title}</a></h3></li>
         </ul>`
     cancion.innerHTML = cancionHTML;
+
+    //HACER DE VUELTA TODO ESTO
 
     let linkFavoritos = document.querySelector (".etiqueta-playlist");
     
@@ -29,6 +31,7 @@ fetch(urlCancion)
     let storageToArray = JSON.parse(recuperoStorage);
 
     let cancionesFavoritos = [];
+
     if(recuperoStorage !== null){
         cancionesFavoritos = storageToArray
     }
@@ -78,6 +81,10 @@ fetch(urlCancion)
 .catch(function(error){
     console.log("Error: " + error);
 })
+//CREAR UN BOTON DONDE PERMITA AGREGAR UNA CANCION A LA PLAYLIST (LOCALSTORAGE), 
+//Y CON EL USO DE EVENTOS MOSTRAR AL USUARIO SI SE AGREGO O ELIMINO 
+//QUE TENGA LA OPCION DE AGREGAR CANCNION O ELIMINAR, DEL ARRAY (LS)
+
 
 //.includes() retorna si el elemento de encunetra en el array y retorna True o False
 //.indexOf() retorna en que indice del array se encuentra

@@ -17,9 +17,7 @@ fetch(urlArtista)
 
         artistaHTML += `<article class= "detalles-cantante detalles-article-informacion">
         <img src= ${data.picture_big}>
-        <ul class="detalles-generos" >
-        <li><h2> Artista: ${data.name}</h2></li>
-        </ul>`
+        <h2 class="detalles-artistas-texto" > Artista: ${data.name}</h2>`
 
     artista.innerHTML = artistaHTML;
 })
@@ -46,7 +44,7 @@ fetch(urlListaAlbum)
     let listaAlbumHTML = ""
 
     for(let i=0; i<5; i++){
-        listaAlbumHTML += `<li><h3><a href="detalles-album.html?id=${arrayListaAlbum[i].id}">${arrayListaAlbum[i].title}</a></h3></li>`
+        listaAlbumHTML += `<li><h3><a class="detalles-artista-link" href="detalles-album.html?id=${arrayListaAlbum[i].id}">${arrayListaAlbum[i].title}</a></h3></li>`
     }
     listaAlbum.innerHTML=listaAlbumHTML
 

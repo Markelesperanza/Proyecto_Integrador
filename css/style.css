@@ -97,8 +97,6 @@ article.home-article{
     border-radius:  0px 0px 15px 15px;
     transition: transform 0.5s ease;
 }
-/***** HOME *****/
-
 article.home-article:hover {
     transform: scale(1.05);
   }
@@ -136,19 +134,81 @@ section.listado-generos{
 }
 /***GENEROS***/
 
-/***DETALLES***/
-section.detalles-informacion{
+/***Detalles Canciones***/
+section.detalles-canciones-section{
     background-color: #1A1A1A;
     border-radius: 15px;
     margin: 10px 15px;
+    display: flex;
+}
+article.detalles-canciones-informacion{
+    display: flex;
+    color: white; 
+}
+article.detalles-cancion-listado{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+a.detalles-canciones-link{
+    color: white;
+}
+ul.detalles-canciones-texto{
+    margin:  0px 100px;
+}
+.detalles-canciones-iamgen{
+    padding: 15px;
+}
+/***Detalles Canciones***/
+
+/***Detalles Albums***/
+section.detalles-album-section{
+    background-color: #1A1A1A;
+    border-radius: 15px;
+    margin: 10px 15px;
+    display: flex;
+}
+article.detalles-album-informacion{
+    display: flex;
+    color: white; 
+}
+article.detalles-album-listado{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+a.detalles-album-link{
+    color: white;
+}
+ul.detalles-album-texto{
+    margin:  0px 100px;
+}
+.detalles-album-imagen{
+    padding: 15px;
+}
+/***Detalles Albums***/
+
+/***Detalles Artistas***/
+section.detalles-artistas-section{
+    background-color: #1A1A1A;
+    border-radius: 15px;
+    margin: 10px 15px;
+    display: flex;
 }
 article.detalles-article-informacion{
     display: flex;
-    padding: 15px;
+    padding: 18px;
     color: white;
 }
-.detalles-generos{
+article.detalles-artistas-listado {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+a.detalles-artista-link{
+    color: white;
+}
+h2.detalles-artistas-texto{
     margin:  0px 100px;
 }
-
-/***DETALLES***/
+/***Detalles Artistas***/
