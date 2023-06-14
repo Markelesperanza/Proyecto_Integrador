@@ -18,9 +18,9 @@ fetch(urlAlbum)
         <img src= ${data.cover_big}>
         <ul class="detalles-generos" >
         <li><h2> Album: ${data.title}</h2></li>
-        <li><h3> Artista: ${data.artist.name}</h3></li>
-        <li><h3> Genero: ${data.genres.data[0].name}</h3></li>
-        <li><h3> Fecha de publicación:${data.release_date}</h3></li>
+        <li><h3> Artista: <a href="detalles-artistas.html?id=${data.artist.id}">${data.artist.name}</a></h3></li>
+        <li><h3> Genero: <a href="detail-genres.html?id=${data.genres.data[0].id}">${data.genres.data[0].name}</a></h3></li>
+        <li><h3> Fecha de publicación: ${data.release_date}</h3></li>
         </ul>`
 
     album.innerHTML = albumHTML;

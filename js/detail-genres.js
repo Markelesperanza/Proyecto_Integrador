@@ -22,7 +22,7 @@ fetch(urlDetallesGenero)
         detallesGeneroHTML += `<article>
         <h2></h2>
         <img src=${arrayDetallesGenero[i].picture_medium}>
-        <h3>${arrayDetallesGenero[i].name}</h3>
+        <h3><a href="detalles-artistas.html?id=${arrayDetallesGenero[i].id}">${arrayDetallesGenero[i].name}</a></h3>
         </article>`
     }
     detallesGenero.innerHTML= detallesGeneroHTML;

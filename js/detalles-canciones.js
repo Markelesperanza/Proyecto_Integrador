@@ -18,8 +18,8 @@ fetch(urlCancion)
         <img src= ${data.album.cover_big}>
         <ul class="detalles-generos" >
         <li><h2> Cancion: ${data.title}</h2></li>
-        <li><h3> Artista: ${data.artist.name}</h3></li>
-        <li><h3> Album: ${data.album.title}</h3></li>
+        <li><h3>Artista: <a href="detalles-artistas.html?id=${data.artist.id}">${data.artist.name}</a></h3></li>
+        <li><h3> Album: <a href="detalles-album.html?id=${data.album.id}">${data.album.title}</a></h3></li>
         </ul>`
     cancion.innerHTML = cancionHTML;
 
