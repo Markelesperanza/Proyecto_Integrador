@@ -90,5 +90,27 @@ fetch(urlArtistas)
     console.log("Error: " + error);
 })
 /***** ARTISTAS *****/
-
 /***** HOME *****/
+
+/***** BUSCADOR *****/
+let formulario = document.querySelector(".buscador")
+let buscador = document.querySelector('[name=buscar]')
+
+formulario.addEventListener('submit', function(e){
+    e.preventDefault()
+
+    if(buscador.value === ''){
+
+        let vacio = "Que el campo no esté vacío!"
+        alert(vacio);
+    } else if (buscador.value.length < 3){
+
+        let caracteres = "Que el término buscado tenga al menos 3 caracteres!"
+        alert(caracteres);
+
+    } else {
+
+        formulario.submit()
+    }
+})
+/***** BUSCADOR *****/
