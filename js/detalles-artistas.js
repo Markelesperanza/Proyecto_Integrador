@@ -23,7 +23,34 @@ fetch(urlArtista)
 
     artista.innerHTML = artistaHTML;
 })
-//Lista de máximo 5 albums.
+.catch(function(error){
+    console.log("Error: " + error);
+})
+
+
+let qsLista = window.location.search
+let qsListaObj = new URLSearchParams(qsLista);
+let idListaAlbum = qsListaObj.get("id");
+
+let urlListaAlbum = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${id}/albums`
+
+fetch(urlListaAlbum)
+.then(function(response){
+    return response.json()
+})
+.then(function(data){
+    console.log(data);
+
+    let listaAlbum = document.querySelector(".listado-artista-albums");
+    let arrayListaAlbum = data.data //ver API
+    let listaAlbumHTML = ""
+
+    for(let i=0; i<5; i++){
+        listaAlbumHTML += `<li><h3>${arrayListaAlbum[i].title}</h3></li>`
+    }
+    listaAlbum.innerHTML=listaAlbumHTML
+
+ })
 .catch(function(error){
     console.log("Error: " + error);
 })

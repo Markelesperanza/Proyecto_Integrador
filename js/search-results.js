@@ -25,13 +25,13 @@ form.addEventListener("submit", function(e) {
   }
 });
 
-function buscarResultados() {
+//function buscarResultados() {
   // Aquí implementa la lógica para buscar los resultados
   // Retorna un array de objetos con los resultados encontrados
   // Ejemplo ficticio:
-  return [
-    { title: 'Canciones', url: '.html' },
-    { title: 'Albumes', url: 'album.html' },
-    { title: 'Artistas', url:  }
-  ];
-}
+  //return [
+   //{ title: 'Canciones', url: '.html' },
+    //{ title: 'Albumes', url: 'album.html' },
+   //{ title: 'Artistas', url:  }
+  //];
+//}

@@ -25,27 +25,37 @@ fetch(urlAlbum)
 
     album.innerHTML = albumHTML;
 
-    let albumTracks = document.querySelector(".detalles-album");
-    let idTracks = data.artist.id
-    let urlTracklist = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/${idTracks}/image`
-
-    fetch(urlTracklist)
-    .then(function(response){
-        return response.json()
-    })
-    .then(function(data){
-        console.log(data);
-        
-    let arrayTracklist = data.data;
-    let trackListHTML = ""
-
-        album.innerHTML = trackListHTML
-    })
-    .catch(function(error){
-        console.log("Error: " + error);
-    })
-
 })
 .catch(function(error){
     console.log("Error: " + error);
 })
+
+let qsLista = window.location.search
+let qsListaObj = new URLSearchParams(qsLista);
+let idListaCanciones = qsListaObj.get("id");
+
+let urlListaCanciones = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/album/${id}/tracks`
+
+fetch(urlListaCanciones)
+.then(function(response){
+    return response.json()
+})
+.then(function(data){
+    console.log(data);
+
+    let listaCanciones = document.querySelector (".listado-canciones-album");
+    let arrayListaCanciones = data.data
+    let listaCancionesHTML = ""
+
+    for(let i=0; i<arrayListaCanciones.length; i++){
+        listaCancionesHTML += `<li><h3>${arrayListaCanciones[i].title_short}</h3></li>`
+    }
+    listaCanciones.innerHTML=listaCancionesHTML
+
+ })
+.catch(function(error){
+    console.log("Error: " + error);
+})
+
+  //Con la API ya tengo la lista de canciones
+  //Como hago para crear una lista <Ul> que me devuelva una cancion por <Li>

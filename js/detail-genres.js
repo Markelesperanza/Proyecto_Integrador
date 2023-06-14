@@ -4,8 +4,7 @@ let queryString = window.location.search
 let queryStringObj = new URLSearchParams(queryString);
 let id = queryStringObj.get("id");
 
-let urlDetallesGenero= `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}/artists`
-
+let urlDetallesGenero = `https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre/${id}/artistas`
 
 fetch(urlDetallesGenero)
 .then(function(response){
@@ -20,9 +19,9 @@ fetch(urlDetallesGenero)
 
     for(let i=0; i<arrayDetallesGenero.length; i++){
         detallesGeneroHTML += `<article>
-        <h2></h2>
+        <a href="detalles-artistas.html?id=${arrayDetallesGenero[i].id}">
         <img src=${arrayDetallesGenero[i].picture_medium}>
-        <h3><a href="detalles-artistas.html?id=${arrayDetallesGenero[i].id}">${arrayDetallesGenero[i].name}</a></h3>
+        <h3>${arrayDetallesGenero[i].name}</h3></a>
         </article>`
     }
     detallesGenero.innerHTML= detallesGeneroHTML;
