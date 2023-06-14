@@ -46,7 +46,7 @@ fetch(urlListaAlbum)
     let listaAlbumHTML = ""
 
     for(let i=0; i<5; i++){
-        listaAlbumHTML += `<li><h3>${arrayListaAlbum[i].title}</h3></li>`
+        listaAlbumHTML += `<li><h3><a href="detalles-album.html?id=${arrayListaAlbum[i].id}">${arrayListaAlbum[i].title}</a></h3></li>`
     }
     listaAlbum.innerHTML=listaAlbumHTML
 

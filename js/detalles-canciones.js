@@ -44,17 +44,32 @@ fetch(urlCancion)
             }
             cancionesAJson = JSON.stringify(cancionesFavoritos);
             localStorage.setItem("MiPlaylist", cancionesAJson);
+            
+            let resultado = confirm("¿Desea usted eliminar de la Playlist?")
+            if (resultado) {
+                
+                let mensajeEliminar = "Se elimino de la Playlist"
+                alert(mensajeEliminar);
+            } else {
+                cancionesFavoritos.push(id);
+                cancionesAJson = JSON.stringify(cancionesFavoritos);
+                localStorage.setItem("MiPlaylist", cancionesAJson);
 
+                let mensajeNoEliminar = "No se elimino de la Playlist"
+                alert(mensajeNoEliminar);
 
-            console.log("Eliminada");
+            }
+            console.log();
           } else {
             
             cancionesFavoritos.push(id);
             cancionesAJson = JSON.stringify(cancionesFavoritos);
             localStorage.setItem("MiPlaylist", cancionesAJson);
 
+            let mensaje = "Se agrego correctamente a la Playlist"
+            alert(mensaje);
 
-            console.log("Agregada");
+            console.log();
           }
         
         console.log(localStorage);

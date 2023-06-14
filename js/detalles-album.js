@@ -48,7 +48,7 @@ fetch(urlListaCanciones)
     let listaCancionesHTML = ""
 
     for(let i=0; i<arrayListaCanciones.length; i++){
-        listaCancionesHTML += `<li><h3>${arrayListaCanciones[i].title_short}</h3></li>`
+        listaCancionesHTML += `<li><h3><a href="detalles-canciones.html?id=${arrayListaCanciones[i].id}">${arrayListaCanciones[i].title_short}</a></h3></li>`
     }
     listaCanciones.innerHTML=listaCancionesHTML
 
@@ -56,6 +56,3 @@ fetch(urlListaCanciones)
 .catch(function(error){
     console.log("Error: " + error);
 })
-
-  //Con la API ya tengo la lista de canciones
-  //Como hago para crear una lista <Ul> que me devuelva una cancion por <Li>
