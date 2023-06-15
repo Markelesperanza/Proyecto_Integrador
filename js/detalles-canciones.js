@@ -23,68 +23,46 @@ fetch(urlCancion)
         </ul>`
     cancion.innerHTML = cancionHTML;
 
-    //HACER DE VUELTA TODO ESTO
+    let cancionesMiPlaylist = document.querySelector(".etiqueta-playlist")
 
-    let linkFavoritos = document.querySelector (".etiqueta-playlist");
+    let recuperoStorage = localStorage.getItem("MiPlaylist")
+    let storageToarray = JSON.parse(recuperoStorage);
     
-    let recuperoStorage = localStorage.getItem(".link-playlist-section");
-    let storageToArray = JSON.parse(recuperoStorage);
-
-    let cancionesFavoritos = [];
-
+    let arrayPlaylist = [];
+    
     if(recuperoStorage !== null){
-        cancionesFavoritos = storageToArray
+    arrayPlaylist = storageToarray
+    }
+    if(arrayPlaylist.includes(id)){
+    cancionesMiPlaylist.innerText = "Eliminar de Mi Playlist"
     }
     
-    linkFavoritos.addEventListener('click', function(e){
-        e.preventDefault();
+    cancionesMiPlaylist.addEventListener('click', function(e){
+        e.preventDefault
         
-        if (cancionesFavoritos.includes(id)) {
-            
-            let arrayIncluye = cancionesFavoritos.indexOf(id);
-            if (arrayIncluye !== -1) {
-              cancionesFavoritos.splice(arrayIncluye, 1);
-            }
-            cancionesAJson = JSON.stringify(cancionesFavoritos);
-            localStorage.setItem("MiPlaylist", cancionesAJson);
-            
-            let resultado = confirm("¿Desea usted eliminar de la Playlist?")
-            if (resultado) {
-                
-                let mensajeEliminar = "Se elimino de la Playlist"
-                alert(mensajeEliminar);
-            } else {
-                cancionesFavoritos.push(id);
-                cancionesAJson = JSON.stringify(cancionesFavoritos);
-                localStorage.setItem("MiPlaylist", cancionesAJson);
+        if(arrayPlaylist.includes(id)){
 
-                let mensajeNoEliminar = "No se elimino de la Playlist"
-                alert(mensajeNoEliminar);
+        let listaCanciones = arrayPlaylist.indexOf(id)
+        arrayPlaylist.splice(listaCanciones,1)   
 
-            }
-            console.log();
-          } else {
-            
-            cancionesFavoritos.push(id);
-            cancionesAJson = JSON.stringify(cancionesFavoritos);
-            localStorage.setItem("MiPlaylist", cancionesAJson);
+        cancionesMiPlaylist.innerText = "Agregar a Mi Playlist"
 
-            let mensaje = "Se agrego correctamente a la Playlist"
-            alert(mensaje);
-
-            console.log();
-          }
+        }else{
+            arrayPlaylist.push(id)
+            cancionesMiPlaylist.innerText = "Eliminar de Mi Playlist"
+        }
+        
+        let informacionArray = JSON.stringify(arrayPlaylist)
+        localStorage.setItem("MiPlaylist",informacionArray)
         
         console.log(localStorage);
-    })
+   })
+
 })
+
 .catch(function(error){
     console.log("Error: " + error);
 })
-//CREAR UN BOTON DONDE PERMITA AGREGAR UNA CANCION A LA PLAYLIST (LOCALSTORAGE), 
-//Y CON EL USO DE EVENTOS MOSTRAR AL USUARIO SI SE AGREGO O ELIMINO 
-//QUE TENGA LA OPCION DE AGREGAR CANCNION O ELIMINAR, DEL ARRAY (LS)
-
 
 //.includes() retorna si el elemento de encunetra en el array y retorna True o False
 //.indexOf() retorna en que indice del array se encuentra
@@ -92,3 +70,26 @@ fetch(urlCancion)
 //.splice() eimina el elemento existente en el array
 //cancionesFavoritos.push(id);
 //localStorage.setItem(".detalles-cancion", cancionesAJson)
+
+/***** BUSCADOR *****/
+let formulario = document.querySelector(".buscador")
+let buscador = document.querySelector('[name=buscar]')
+
+formulario.addEventListener('submit', function(e){
+    e.preventDefault()
+
+    if(buscador.value === ''){
+
+        let vacio = "Que el campo no esté vacío!"
+        alert(vacio);
+    } else if (buscador.value.length < 3){
+
+        let caracteres = "Que el término buscado tenga al menos 3 caracteres!"
+        alert(caracteres);
+
+    } else {
+
+        formulario.submit()
+    }
+})
+/***** BUSCADOR *****/

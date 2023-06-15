@@ -18,8 +18,7 @@ fetch(urlCanciones)
         <a class="link-color" href="detalles-canciones.html?id=${arrayCanciones[i].id}">
         <img src= ${arrayCanciones[i].album.cover_medium}>
         <h2 class="home-texto" >${arrayCanciones[i].title}</h2>
-        <h3 class="home-texto" >${arrayCanciones[i].artist.name}</h3>
-        </a>
+        <h3 class="home-texto" >${arrayCanciones[i].artist.name}</h3></a>
         </article>`
     }
     canciones.innerHTML= cancionesHTML;
@@ -46,11 +45,13 @@ fetch(urlAlbum)
 
     for(let i=0; i<arrayAlbum.length; i++){
         albumHTML += `<article class="home-article-album home-article">
-        <a class="link-color" href="detalles-album.html?id=${arrayAlbum[i].id}">
-        <img src= ${arrayAlbum[i].cover_medium}>
-        <h2 class="home-texto" >${arrayAlbum[i].title} </h2>
-        <h3 class="home-texto" >${arrayAlbum[i].artist.name}</h3>
-        </a>
+          <a class="link-color" href="detalles-album.html?id=${arrayAlbum[i].id}">
+             <img src= ${arrayAlbum[i].cover_medium}>
+             <div>
+                  <h2 class="home-texto" >${arrayAlbum[i].title} </h2>
+                  <h3 class="home-texto" >${arrayAlbum[i].artist.name}</h3>
+             </div>
+          </a>
         </article>`
 
     }
