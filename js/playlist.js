@@ -1,28 +1,27 @@
-let recuperoStorage = localStorage.getItem("MiPlaylist");
-let cancionesRecuperadas = JSON.parse(recuperoStorage);
+let linkFavs = localStorage.getItem("MiPlaylist");
+let storageToArray = JSON.parse(linkFavs);
 
-let imgplaylist = document.querySelector(".canciones-de-la-playlist");
+let tracksFavoritos = document.querySelector(".canciones-de-la-playlist");
 
-let tituloplaylist = document.querySelector(".playlist-titulo");
+let tituloPlaylist = document.querySelector(".playlist-titulo");
 
-if(cancionesRecuperadas.length == 0){
-  tituloplaylist.innerHTML = "Tu Playlist esta vacía"
+if(storageToArray.length == 0){
+  tituloPlaylist.innerHTML = "Tu Playlist esta vacía"
 
 }else{
-  for(let i=0 ; i < cancionesRecuperadas.length; i++){
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${cancionesRecuperadas[i]}`)
+  for(let i=0 ; i < storageToArray.length; i++){
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/${storageToArray[i]}`)
     
     .then(function(response){
     return response.json()
 
     })
-    .then(function(track){
-      imgplaylist.innerHTML += `<a href="detalles-canciones.html?id=${track.id}">
-      <img src="${track.album.cover}">
+    .then(function(track){ //track
+      tracksFavoritos.innerHTML += `<a href="detalles-canciones.html?id=${track.id}">
+      <img src="${track.album.cover_small}">
       <h3>${track.title}</h3>
       </a>`
     
-
     })
     .catch(function(error){
       console.log("Error: " + error);

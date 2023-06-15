@@ -18,10 +18,10 @@ fetch(urlDetallesGenero)
     let detallesGeneroHTML= ''
 
     for(let i=0; i<arrayDetallesGenero.length; i++){
-        detallesGeneroHTML += `<article>
-        <a href="detalles-artistas.html?id=${arrayDetallesGenero[i].id}">
+        detallesGeneroHTML += `<article class="home-article">
+        <a class="link-color" href="detalles-artistas.html?id=${arrayDetallesGenero[i].id}">
         <img src=${arrayDetallesGenero[i].picture_medium}>
-        <h3>${arrayDetallesGenero[i].name}</h3></a>
+        <h3 class="home-texto" >${arrayDetallesGenero[i].name}</h3></a>
         </article>`
     }
     detallesGenero.innerHTML= detallesGeneroHTML;

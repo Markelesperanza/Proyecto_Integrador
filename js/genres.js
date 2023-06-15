@@ -12,10 +12,10 @@ fetch (urlGeneros)
     let generosHTML= ""
     
     for(let i=1;i<arrayGeneros.length;i++){
-        generosHTML += `<article class= "article-generos">
-        <a class="generos-titulo" href="detail-genres.html?id=${arrayGeneros[i].id}">
-        <h2>${arrayGeneros[i].name}</h2>
+        generosHTML += `<article class= "home-article">
+        <a class="link-color" href="detail-genres.html?id=${arrayGeneros[i].id}">
         <img src= ${arrayGeneros[i].picture_medium}>
+        <h2 class="home-texto" >${arrayGeneros[i].name}</h2>
         </a>
         </article>`
     }
