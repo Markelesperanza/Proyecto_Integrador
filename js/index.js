@@ -90,5 +90,4 @@ fetch(urlArtistas)
     console.log("Error: " + error);
 })
 /***** ARTISTAS *****/
-
 /***** HOME *****/
