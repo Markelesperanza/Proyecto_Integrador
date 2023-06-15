@@ -12,8 +12,8 @@
         <nav>
             <img id="logomusify" src="./img/logo-musify.jpg" alt="The Musify Setlist">
 
-            <form action="search-results.html" method="GET">
-                <input type="text" name="buscar" id="" value="">
+            <form class="buscador" action="search-results.html" method="GET">
+                <input type="text" name="buscar" id="" value="" placeholder="Buscar...">
                 <button type="submit">Buscar</button>
             </form>
 
@@ -25,8 +25,19 @@
         </nav>
     </header>
     
-    <section><ul class="canciones-playlist"></ul></section>
+    <h2 class="playlist-titulo" >Mi Playlist</h2>
+            <section class="mi-playlist">
+                <article class="canciones-de-la-playlist" ></article>
+            </section>
 
+    <footer>
+        <ul id="footerlist">
+            <li class="footeritems">Markel Esperanza</li>
+            <li class="footeritems">Joaquin Rosas Zuiani</li>
+            <li class="footeritems">Sol Ravettini</li>
+        </ul>
+    </footer>
+    
     <script src="./js/playlist.js"></script>
 </body>
 </html>
