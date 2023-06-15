@@ -6,7 +6,7 @@ let imagenPlaylist = document.querySelector('.playlist-favoritos');
 let tituloPlaylist = document.querySelector('.tituloPlaylist');
 
 if(cancionesRecuperadas.length == 0){
-    tituloPlaylist.innerHTML = 'No agregaste ninguna cacion a tu playlist'
+    tituloPlaylist.innerHTML = 'No agregaste ninguna canción a tu playlist'
 } else{
 
     for(let i=0 ; i < cancionesRecuperadas.length; i++){
