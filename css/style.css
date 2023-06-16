@@ -217,3 +217,11 @@ section.playlist-listado{
     display: flex;
     flex-direction: column;
 }
+
+@media(max-width:420px){
+    footer ul.footerlist {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
