@@ -50,11 +50,13 @@ fetch(urlCancion)
         let listaCanciones = arrayPlaylist.indexOf(id)
         arrayPlaylist.splice(listaCanciones,1)   
 
-        cancionesMiPlaylist.innerText = "Agregar a Mi Playlist"
+
+        cancionesMiPlaylist.innerText = "Agregra a Mi Playlist"
 
         }else{
             arrayPlaylist.push(id)
-            cancionesMiPlaylist.innerText = "Eliminar de Mi Playlist"
+
+            cancionesMiPlaylist.innerHTML = "Eliminar de Mi Playlist"
         }
         
         let informacionArray = JSON.stringify(arrayPlaylist)

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.21/dist/css/uikit.min.css" />
     <title>Document</title>
 </head>
 <body>
@@ -32,12 +33,22 @@
         <section class="">
             <article class="detalles-canciones-listado"> 
                 <ul>
-                    <li><h2><a class="etiqueta-playlist">Agregar a Mi Playlist</a></h2></li>
+                    <li><a class="etiqueta-playlist uk-button uk-button-default" href="#modal-center" uk-toggle>Agregar a Mi Playlist</a></li>
                     <li><h2><a href="./playlist.html">Ver "Mi Playlist"</a></h2></li>
+                    
                </ul>
                 
             </article>
         </section>
+
+        <div id="modal-center" class="uk-flex-top" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <p>¡Playlist personalizada actualizada!
+
+                    ¡Gran noticia! Ahora tienes el poder de armar tu propia playlist. Agrega y elimina canciones según tus gustos. Disfruta al máximo cada momento musical. ¡Libertad total en THE MUSIFY SETLIST</p>
+            </div>
+        </div>
 
     </section>
 
@@ -48,7 +59,9 @@
             <li class="footeritems">Sol Ravettini</li>
         </ul>
     </footer>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.21/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.21/dist/js/uikit-icons.min.js"></script>
     <script src="./js/detalles-canciones.js"></script>
 </body>
 </html>

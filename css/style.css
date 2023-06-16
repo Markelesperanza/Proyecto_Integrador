@@ -35,11 +35,7 @@ header nav li {
     font-size: 24px;
     margin: 10px;
     color: #CB6CE6;
-    transition: transform 0.5s ease; 
 }
-header nav li:hover {
-    transform: scale(1.05);
-  }
 #logomusify {
     height: 50px;
     margin: 0px 15px;
@@ -95,11 +91,7 @@ article.home-article{
     margin: 10px;
     background-color: #CB6CE6;
     border-radius:  0px 0px 15px 15px;
-    transition: transform 0.5s ease;
 }
-article.home-article:hover {
-    transform: scale(1.05);
-  }
 .link-color{
     color: white;
     font-family: 'Ubuntu', sans-serif;
@@ -215,4 +207,13 @@ h2.detalles-artistas-texto{
 
 .buscador{
     border-radius: 15px;
+}
+section.playlist-listado{
+    background-color: #1A1A1A;
+    border-radius: 15px;
+    padding: 15px;
+}
+.canciones-de-la-playlist{
+    display: flex;
+    flex-direction: column;
 }
