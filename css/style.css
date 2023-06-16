@@ -212,3 +212,7 @@ h2.detalles-artistas-texto{
     margin:  0px 100px;
 }
 /***Detalles Artistas***/
+
+.buscador{
+    border-radius: 15px;
+}

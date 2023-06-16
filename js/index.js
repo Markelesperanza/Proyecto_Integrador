@@ -14,12 +14,14 @@ fetch(urlCanciones)
     let cancionesHTML= ''
 
     for(let i=0; i<arrayCanciones.length; i++){
-        cancionesHTML += `<article class="home-article-canciones home-article">
+        cancionesHTML += `<li>
+        <article class="home-article-canciones home-article">
         <a class="link-color" href="detalles-canciones.html?id=${arrayCanciones[i].id}">
-        <img src= ${arrayCanciones[i].album.cover_medium}>
+        <img src= ${arrayCanciones[i].album.cover_medium} width="400" height="600">
         <h2 class="home-texto" >${arrayCanciones[i].title}</h2>
         <h3 class="home-texto" >${arrayCanciones[i].artist.name}</h3></a>
-        </article>`
+        </article>
+        </li>`
     }
     canciones.innerHTML= cancionesHTML;
 
@@ -44,15 +46,17 @@ fetch(urlAlbum)
     let albumHTML= ''
 
     for(let i=0; i<arrayAlbum.length; i++){
-        albumHTML += `<article class="home-article-album home-article">
+        albumHTML += `<li>
+        <article class="home-article-album home-article">
           <a class="link-color" href="detalles-album.html?id=${arrayAlbum[i].id}">
-             <img src= ${arrayAlbum[i].cover_medium}>
+             <img src= ${arrayAlbum[i].cover_medium} width="400" height="600">
              <div>
                   <h2 class="home-texto" >${arrayAlbum[i].title} </h2>
                   <h3 class="home-texto" >${arrayAlbum[i].artist.name}</h3>
              </div>
           </a>
-        </article>`
+        </article>
+        </li>`
 
     }
     album.innerHTML= albumHTML;
@@ -77,12 +81,14 @@ fetch(urlArtistas)
     let artistasHTML= ''
 
     for(let i=0; i<arrayArtistas.length; i++){
-        artistasHTML += `<article class="home-article-artistas home-article">
+        artistasHTML += `<li>
+        <article class="home-article-artistas home-article">
         <a class="link-color" href="detalles-artistas.html?id=${arrayArtistas[i].id}">
-        <img src= ${arrayArtistas[i].picture_medium}>
+        <img src= ${arrayArtistas[i].picture_medium} width="400" height="600">
         <h2 class="home-texto" >${arrayArtistas[i].name} </h2>
         </a>
-        </article>`
+        </article>
+        </li>`
     }
     artistas.innerHTML= artistasHTML;
 
