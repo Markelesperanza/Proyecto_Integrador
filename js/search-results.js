@@ -17,7 +17,7 @@ console.log(data);
 
 for(let i=0;i<data.data.lenght;i++){
 contenido+= `<article class= "resultados">
-            <p class="titulobusqueda"><a href=detalle-cancion.html?id=${data.data[i].id}>       
+            <p class="resultados"><a href=detalle-cancion.html?id=${data.data[i].id}>       
 </a>
 </article>`
 }
