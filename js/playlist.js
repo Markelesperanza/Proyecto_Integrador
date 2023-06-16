@@ -20,6 +20,11 @@ if(storageToArray.length == 0){
       tracksFavoritos.innerHTML += `<a href="detalles-canciones.html?id=${track.id}">
       <img src="${track.album.cover_small}">
       <h3>${track.title}</h3>
+      <audio controls>
+        <source src="${track.preview}" type="audio/ogg">
+        <source src="${track.preview}" type="audio/mpeg">
+        Your browser does not support the audio tag.
+        </audio>
       </a>`
     
     })

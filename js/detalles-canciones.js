@@ -20,6 +20,11 @@ fetch(urlCancion)
         <li><h2> Cancion: ${data.title}</h2></li>
         <li><h3>Artista: <a class="detalles-canciones-link" href="detalles-artistas.html?id=${data.artist.id}">${data.artist.name}</a></h3></li>
         <li><h3> Album: <a class="detalles-canciones-link" href="detalles-album.html?id=${data.album.id}">${data.album.title}</a></h3></li>
+        <audio controls>
+        <source src="${data.preview}" type="audio/ogg">
+        <source src="${data.preview}" type="audio/mpeg">
+        Your browser does not support the audio tag.
+        </audio>
         </ul>`
     cancion.innerHTML = cancionHTML;
 
