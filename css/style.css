@@ -221,10 +221,12 @@ section.playlist-listado{
 h1.titulobusqueda {
   color:white;
 }
+
 section a{
     color: white;
 }
 /**search results**/
+
 
 @media(max-width:420px){
     footer ul.footerlist {
