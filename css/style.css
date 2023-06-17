@@ -215,5 +215,14 @@ section.playlist-listado{
 }
 .canciones-de-la-playlist{
     display: flex;
-    flex-direction: column;
+    flex-direction: column
 }
+/**search results**/
+h1.titulobusqueda {
+  color:white;
+}
+section a{
+    color: white;
+}
+
+
