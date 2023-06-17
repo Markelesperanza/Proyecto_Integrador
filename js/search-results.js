@@ -7,6 +7,10 @@ let contenido=''
 let titulo=document.querySelector('.titulobusqueda')
 titulo.innerHTML += buscar
 
+let loader = document.getElementById('loader'); // Obtener el elemento del loader
+
+loader.style.display = 'block'; // Mostrar el loader antes de hacer la búsqueda
+
 fetch (`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${buscar}`)
 .then(function (response){
   return response.json ()
@@ -18,22 +22,26 @@ console.log(data);
 for(let i=0;i<data.data.length;i++){
 contenido+= `<article class= "resultados">
             <p class="titulobusqueda">
-              <a href="detalles-canciones.html?id=${data.data[i].id}">   
+              <a class="search-results-color" href="detalles-canciones.html?id=${data.data[i].id}">   
               ${data.data[i].title}
               </a>
             </p>
           </article>`
 }
 
-contenido.innerHTML+=contenido
+resultados.innerHTML+=contenido
 if(data.data.length == 0){
   alert('La busqueda no trajo resultados ')
 }
 resultados.innerHTML=contenido
+
+loader.style.display = 'none'; // Ocultar el loader después de cargar los resultados
 })
 
 .catch(function(error){
 console.log("Error:" + error );
+
+loader.style.display = 'none'; // Ocultar el loader en caso de error
 })
 
 /***** BUSCADOR *****/
