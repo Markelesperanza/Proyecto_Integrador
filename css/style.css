@@ -224,5 +224,12 @@ h1.titulobusqueda {
 section a{
     color: white;
 }
+/**search results**/
 
-
+@media(max-width:420px){
+    footer ul.footerlist {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
